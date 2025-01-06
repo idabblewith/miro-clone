@@ -19,7 +19,11 @@ interface RoomProps {
 export const Room = ({ children, roomId, fallback }: RoomProps) => {
 	return (
 		<LiveblocksProvider
-			publicApiKey={process.env.NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY!}
+			// For local development (can share link without being invited to the org)
+			// publicApiKey={process.env.NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY!}
+			throttle={16}
+			// For production (requires being invited to the org to view room)
+			authEndpoint={`/api/liveblocks-auth`}
 		>
 			<RoomProvider
 				id={roomId}

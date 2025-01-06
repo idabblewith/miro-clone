@@ -1,15 +1,17 @@
 // Define Liveblocks types for your application
 import {
-	createClient,
+	// createClient,
 	LiveList,
 	LiveMap,
 	LiveObject,
 } from "@liveblocks/client";
-import { createRoomContext } from "@liveblocks/react";
-const client = createClient({
-	throttle: 16,
-	authEndpoint: "/api/liveblocks-auth",
-});
+
+// These are handled at the liveblocks provider level in Room.tsx
+// import { createRoomContext } from "@liveblocks/react";
+// const client = createClient({
+// 	throttle: 16,
+// 	authEndpoint: "/api/liveblocks-auth",
+// });
 import { Layer, Color } from "@/types/canvas";
 
 // https://liveblocks.io/docs/api-reference/liveblocks-react#Typing-your-data

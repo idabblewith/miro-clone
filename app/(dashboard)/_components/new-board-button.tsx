@@ -26,8 +26,10 @@ export const NewBoardButton = ({ orgId, disabled }: NewBoardButtonProps) => {
 				toast.success("Board created");
 				router.push(`/board/${id}`);
 			})
-			.catch(() => {
-				toast.error("Failed to create board");
+			.catch((e) => {
+				toast.error(
+					"Failed to create board. Two boards max for free tier organisation."
+				);
 				// onOpen();
 			});
 	};
